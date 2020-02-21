@@ -14,6 +14,12 @@
 		EFFDB14123FF692400DB86B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFFDB13F23FF692400DB86B8 /* Main.storyboard */; };
 		EFFDB14D23FF692400DB86B8 /* GoVPNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB14C23FF692400DB86B8 /* GoVPNTests.swift */; };
 		EFFDB15823FF692400DB86B8 /* GoVPNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB15723FF692400DB86B8 /* GoVPNUITests.swift */; };
+		EFFDB16D23FF69FC00DB86B8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB16C23FF69FC00DB86B8 /* main.swift */; };
+		EFFDB18A23FF702200DB86B8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFFDB18923FF702200DB86B8 /* Security.framework */; };
+		EFFDB18C23FF777E00DB86B8 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFFDB18B23FF777E00DB86B8 /* ServiceManagement.framework */; };
+		EFFDB19523FF887C00DB86B8 /* com.colharris.GoVPNHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = EFFDB16A23FF69FC00DB86B8 /* com.colharris.GoVPNHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EFFDB19723FF8B3700DB86B8 /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = EFFDB19623FF8B3700DB86B8 /* SMJobBlessUtil.py */; };
+		EFFDB19923FF8B4000DB86B8 /* Uninstall.sh in Resources */ = {isa = PBXBuildFile; fileRef = EFFDB19823FF8B4000DB86B8 /* Uninstall.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +37,27 @@
 			remoteGlobalIDString = EFFDB13223FF692300DB86B8;
 			remoteInfo = GoVPN;
 		};
+		EFFDB19223FF806F00DB86B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFFDB12B23FF692300DB86B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFFDB16923FF69FC00DB86B8;
+			remoteInfo = GoVPNHelper;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EFFDB19423FF886200DB86B8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				EFFDB19523FF887C00DB86B8 /* com.colharris.GoVPNHelper in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EFFDB13323FF692300DB86B8 /* GoVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,13 +67,21 @@
 		EFFDB13D23FF692400DB86B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EFFDB14023FF692400DB86B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFFDB14223FF692400DB86B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFFDB14323FF692400DB86B8 /* GoVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GoVPN.entitlements; sourceTree = "<group>"; };
 		EFFDB14823FF692400DB86B8 /* GoVPNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoVPNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFFDB14C23FF692400DB86B8 /* GoVPNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoVPNTests.swift; sourceTree = "<group>"; };
 		EFFDB14E23FF692400DB86B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFFDB15323FF692400DB86B8 /* GoVPNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoVPNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFFDB15723FF692400DB86B8 /* GoVPNUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoVPNUITests.swift; sourceTree = "<group>"; };
 		EFFDB15923FF692500DB86B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFFDB16A23FF69FC00DB86B8 /* com.colharris.GoVPNHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.colharris.GoVPNHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFFDB16C23FF69FC00DB86B8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EFFDB17123FF6A2000DB86B8 /* GoVPNHelper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoVPNHelper-Info.plist"; sourceTree = "<group>"; };
+		EFFDB17223FF6CB600DB86B8 /* GoVPNHelper-Launchd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoVPNHelper-Launchd.plist"; sourceTree = "<group>"; };
+		EFFDB17323FF6D1E00DB86B8 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EFFDB18923FF702200DB86B8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EFFDB18B23FF777E00DB86B8 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		EFFDB19623FF8B3700DB86B8 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
+		EFFDB19823FF8B4000DB86B8 /* Uninstall.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Uninstall.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFFDB18A23FF702200DB86B8 /* Security.framework in Frameworks */,
+				EFFDB18C23FF777E00DB86B8 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +108,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFFDB16723FF69FC00DB86B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,9 +122,14 @@
 			isa = PBXGroup;
 			children = (
 				EFFDB13523FF692300DB86B8 /* GoVPN */,
+				EFFDB16523FF69A500DB86B8 /* GoVPNHelper */,
 				EFFDB14B23FF692400DB86B8 /* GoVPNTests */,
 				EFFDB15623FF692400DB86B8 /* GoVPNUITests */,
+				EFFDB16B23FF69FC00DB86B8 /* GoVPNHelper */,
 				EFFDB13423FF692300DB86B8 /* Products */,
+				EFFDB18823FF702200DB86B8 /* Frameworks */,
+				EFFDB19623FF8B3700DB86B8 /* SMJobBlessUtil.py */,
+				EFFDB19823FF8B4000DB86B8 /* Uninstall.sh */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +139,7 @@
 				EFFDB13323FF692300DB86B8 /* GoVPN.app */,
 				EFFDB14823FF692400DB86B8 /* GoVPNTests.xctest */,
 				EFFDB15323FF692400DB86B8 /* GoVPNUITests.xctest */,
+				EFFDB16A23FF69FC00DB86B8 /* com.colharris.GoVPNHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +152,6 @@
 				EFFDB13A23FF692400DB86B8 /* Assets.xcassets */,
 				EFFDB13F23FF692400DB86B8 /* Main.storyboard */,
 				EFFDB14223FF692400DB86B8 /* Info.plist */,
-				EFFDB14323FF692400DB86B8 /* GoVPN.entitlements */,
 				EFFDB13C23FF692400DB86B8 /* Preview Content */,
 			);
 			path = GoVPN;
@@ -135,6 +183,33 @@
 			path = GoVPNUITests;
 			sourceTree = "<group>";
 		};
+		EFFDB16523FF69A500DB86B8 /* GoVPNHelper */ = {
+			isa = PBXGroup;
+			children = (
+				EFFDB17123FF6A2000DB86B8 /* GoVPNHelper-Info.plist */,
+				EFFDB17223FF6CB600DB86B8 /* GoVPNHelper-Launchd.plist */,
+				EFFDB17323FF6D1E00DB86B8 /* main.swift */,
+			);
+			path = GoVPNHelper;
+			sourceTree = "<group>";
+		};
+		EFFDB16B23FF69FC00DB86B8 /* GoVPNHelper */ = {
+			isa = PBXGroup;
+			children = (
+				EFFDB16C23FF69FC00DB86B8 /* main.swift */,
+			);
+			path = GoVPNHelper;
+			sourceTree = "<group>";
+		};
+		EFFDB18823FF702200DB86B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFFDB18B23FF777E00DB86B8 /* ServiceManagement.framework */,
+				EFFDB18923FF702200DB86B8 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,10 +220,12 @@
 				EFFDB12F23FF692300DB86B8 /* Sources */,
 				EFFDB13023FF692300DB86B8 /* Frameworks */,
 				EFFDB13123FF692300DB86B8 /* Resources */,
+				EFFDB19423FF886200DB86B8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EFFDB19323FF806F00DB86B8 /* PBXTargetDependency */,
 			);
 			name = GoVPN;
 			productName = GoVPN;
@@ -191,6 +268,22 @@
 			productReference = EFFDB15323FF692400DB86B8 /* GoVPNUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EFFDB16923FF69FC00DB86B8 /* com.colharris.GoVPNHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFFDB16E23FF69FC00DB86B8 /* Build configuration list for PBXNativeTarget "com.colharris.GoVPNHelper" */;
+			buildPhases = (
+				EFFDB16623FF69FC00DB86B8 /* Sources */,
+				EFFDB16723FF69FC00DB86B8 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = com.colharris.GoVPNHelper;
+			productName = GoVPNHelper;
+			productReference = EFFDB16A23FF69FC00DB86B8 /* com.colharris.GoVPNHelper */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -212,6 +305,9 @@
 						CreatedOnToolsVersion = 11.2.1;
 						TestTargetID = EFFDB13223FF692300DB86B8;
 					};
+					EFFDB16923FF69FC00DB86B8 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 				};
 			};
 			buildConfigurationList = EFFDB12E23FF692300DB86B8 /* Build configuration list for PBXProject "GoVPN" */;
@@ -230,6 +326,7 @@
 				EFFDB13223FF692300DB86B8 /* GoVPN */,
 				EFFDB14723FF692400DB86B8 /* GoVPNTests */,
 				EFFDB15223FF692400DB86B8 /* GoVPNUITests */,
+				EFFDB16923FF69FC00DB86B8 /* com.colharris.GoVPNHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -239,8 +336,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFFDB19923FF8B4000DB86B8 /* Uninstall.sh in Resources */,
 				EFFDB14123FF692400DB86B8 /* Main.storyboard in Resources */,
 				EFFDB13E23FF692400DB86B8 /* Preview Assets.xcassets in Resources */,
+				EFFDB19723FF8B3700DB86B8 /* SMJobBlessUtil.py in Resources */,
 				EFFDB13B23FF692400DB86B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +386,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFFDB16623FF69FC00DB86B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFFDB16D23FF69FC00DB86B8 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -299,6 +406,11 @@
 			isa = PBXTargetDependency;
 			target = EFFDB13223FF692300DB86B8 /* GoVPN */;
 			targetProxy = EFFDB15423FF692400DB86B8 /* PBXContainerItemProxy */;
+		};
+		EFFDB19323FF806F00DB86B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFFDB16923FF69FC00DB86B8 /* com.colharris.GoVPNHelper */;
+			targetProxy = EFFDB19223FF806F00DB86B8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -431,19 +543,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = GoVPN/GoVPN.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"GoVPN/Preview Content\"";
 				DEVELOPMENT_TEAM = K465DYH4Z2;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = NO;
 				INFOPLIST_FILE = GoVPN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.GoVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,12 +569,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = GoVPN/GoVPN.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"GoVPN/Preview Content\"";
 				DEVELOPMENT_TEAM = K465DYH4Z2;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GoVPN/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,6 +583,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.GoVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -557,6 +674,64 @@
 			};
 			name = Release;
 		};
+		EFFDB16F23FF69FC00DB86B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K465DYH4Z2;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_TESTABILITY = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/GoVPNHelper/GoVPNHelper-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"GoVPNHelper/GoVPNHelper-Info.plist",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"GoVPNHelper/GoVPNHelper-Launchd.plist",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.GoVPNHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EFFDB17023FF69FC00DB86B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K465DYH4Z2;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_TESTABILITY = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/GoVPNHelper/GoVPNHelper-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"GoVPNHelper/GoVPNHelper-Info.plist",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"GoVPNHelper/GoVPNHelper-Launchd.plist",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.GoVPNHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,6 +767,15 @@
 			buildConfigurations = (
 				EFFDB16323FF692500DB86B8 /* Debug */,
 				EFFDB16423FF692500DB86B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFFDB16E23FF69FC00DB86B8 /* Build configuration list for PBXNativeTarget "com.colharris.GoVPNHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFFDB16F23FF69FC00DB86B8 /* Debug */,
+				EFFDB17023FF69FC00DB86B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
