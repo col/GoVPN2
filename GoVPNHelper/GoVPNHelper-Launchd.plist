@@ -2,7 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>StandardErrorPath</key>
+	<string>/var/log/com.colharris.GoVPNHelper-Error.log</string>
+	<key>StandardOutPath</key>
+	<string>/var/log/com.colharris.GoVPNHelper.log</string>
 	<key>Label</key>
 	<string>com.colharris.GoVPNHelper</string>
+	<key>XPCService</key>
+	<dict>
+		<key>ServiceType</key>
+		<string>Application</string>
+	</dict>
 </dict>
 </plist>

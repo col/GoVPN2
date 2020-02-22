@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             print("Something went wrong! Error: \(error.localizedDescription)")
             exit(1)
         } else {
-            print("Helper available!")
+            print("Helper available!")                        
         }
     }
     

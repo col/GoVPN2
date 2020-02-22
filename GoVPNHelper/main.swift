@@ -7,39 +7,30 @@
 //
 
 import Foundation
-import Security
 
-enum KeychainError: Error {
-    case noPassword
-    case unexpectedPasswordData
-    case unhandledError(status: OSStatus)
-}
-
-class KeychainUtils {
-
-    static func queryPassword(label: String) throws -> String {
-        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-                                    kSecAttrLabel as String: label,
-                                    kSecMatchLimit as String: kSecMatchLimitOne,
-                                    kSecReturnAttributes as String: true,
-                                    kSecReturnData as String: true]
-
-        var item: CFTypeRef?
-        let status = SecItemCopyMatching(query as CFDictionary, &item)
-        guard status != errSecItemNotFound else { throw KeychainError.noPassword }
-        guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status) }
-
-        guard let existingItem = item as? [String : Any],
-            let passwordData = existingItem[kSecValueData as String] as? Data,
-            let password = String(data: passwordData, encoding: String.Encoding.utf8)
-        else {
-            throw KeychainError.unexpectedPasswordData
-        }
-        return password
+class ServiceDelegate : NSObject, NSXPCListenerDelegate {
+    func listener(_ listener: NSXPCListener, shouldAcceptNewConnection newConnection: NSXPCConnection) -> Bool {
+        newConnection.exportedInterface = NSXPCInterface(with: SystemKeychainAccessProtocol.self)
+        let exportedObject = SystemKeychainAccess()
+        newConnection.exportedObject = exportedObject
+        newConnection.resume()
+        return true
     }
 }
 
-let password = try! KeychainUtils.queryPassword(label: "id-aegis-integration")
-print("Password = \(password)")
 
-exit(0)
+// Create the listener and resume it:
+//
+let delegate = ServiceDelegate()
+let listener = NSXPCListener.service()
+listener.delegate = delegate;
+listener.resume()
+
+
+//do {
+//    try KeychainUtils.updatePassword(label: "id-aegis-integration-test", password: "testing")
+//    print("success!")
+//} catch {
+//    print("Error!")
+//}
+

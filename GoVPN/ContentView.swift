@@ -10,10 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-//        Text("Hello, World!")
-//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
         Button(action: {
-            print("Click!")
+            
+            let systemKeychain = SystemKeychain()
+            systemKeychain.updatePassword(identifier: "id-aegis-integration", password: "123456") { result in
+                print("Update password. Success = \(result)")
+            }
+            
         }) {
             Text("Click Me!")
         }
