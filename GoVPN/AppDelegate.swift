@@ -10,6 +10,7 @@ import Cocoa
 import SwiftUI
 import Security
 import ServiceManagement
+import os.log
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -40,18 +41,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func initHelper() {
-        let authFlags: AuthorizationFlags = [.preAuthorize, .extendRights, .interactionAllowed]
+        os_log("init helper...", log: OSLog.app, type: .info)
+        let authFlags: AuthorizationFlags = []
         let status = AuthorizationCreate(nil, nil, authFlags, &authRef)
         if status != errAuthorizationSuccess {
-            print("Failed to create authRef")
+            os_log("Failed to create authRef for GoVPNHelper", log: OSLog.app, type: .info)
             exit(1)
         }
 
         if let error = getHelper() {
-            print("Something went wrong! Error: \(error.localizedDescription)")
+            os_log("Failed to install GoVPNHelper. Error: %{public}@", log: OSLog.app, type: .error, error.localizedDescription)
             exit(1)
         } else {
-            print("Helper available!")                        
+            os_log("GoVPNHelper installed and ready.", log: OSLog.app, type: .info)
         }
     }
     
@@ -59,13 +61,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var result = false
         var error: Error?
 
-        var authItem = AuthorizationItem(name: "com.apple.ServiceManagement.blesshelper", valueLength: 0, value: nil, flags: 0)
+        var authItem = AuthorizationItem(name: kSMRightBlessPrivilegedHelper, valueLength: 0, value: nil, flags: 0)
         var authRights = AuthorizationRights(count: 1, items: &authItem)
         let flags: AuthorizationFlags = [.interactionAllowed, .preAuthorize, .extendRights]
 
         /* Obtain the right to install our privileged helper tool (kSMRightBlessPrivilegedHelper). */
         let status = AuthorizationCopyRights(authRef!, &authRights, nil, flags, nil)
-        if (status != errAuthorizationSuccess) {
+        if status != errAuthorizationSuccess {
             error = NSError(domain: NSOSStatusErrorDomain, code: Int(status), userInfo: nil) as Error?
         } else {
             var cfError: Unmanaged<CFError>?
