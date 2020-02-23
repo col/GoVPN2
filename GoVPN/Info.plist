@@ -34,6 +34,8 @@
 	<true/>
 	<key>NSSupportsSuddenTermination</key>
 	<true/>
+	<key>LSUIElement</key>
+	<true/>
 	<key>SMPrivilegedExecutables</key>
 	<dict>
 		<key>com.colharris.GoVPNHelper</key>

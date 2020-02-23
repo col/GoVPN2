@@ -46,6 +46,6 @@
 # This uninstalls everything installed by the sample.  It's useful when testing to ensure that 
 # you start from scratch.
 
-sudo launchctl unload /Library/LaunchDaemons/com.colharris.SMJobBlessHelper.plist
-sudo rm /Library/LaunchDaemons/com.colharris.SMJobBlessHelper.plist
-sudo rm /Library/PrivilegedHelperTools/com.colharris.SMJobBlessHelper
+sudo launchctl unload /Library/LaunchDaemons/com.colharris.GoVPNHelper.plist
+sudo rm /Library/LaunchDaemons/com.colharris.GoVPNHelper.plist
+sudo rm /Library/PrivilegedHelperTools/com.colharris.GoVPNHelper

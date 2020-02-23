@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EFFDB13723FF692300DB86B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB13623FF692300DB86B8 /* AppDelegate.swift */; };
-		EFFDB13923FF692300DB86B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB13823FF692300DB86B8 /* ContentView.swift */; };
 		EFFDB13B23FF692400DB86B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFFDB13A23FF692400DB86B8 /* Assets.xcassets */; };
 		EFFDB13E23FF692400DB86B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFFDB13D23FF692400DB86B8 /* Preview Assets.xcassets */; };
 		EFFDB14123FF692400DB86B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFFDB13F23FF692400DB86B8 /* Main.storyboard */; };
@@ -27,6 +26,13 @@
 		EFFDB1A32400268100DB86B8 /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1A22400268100DB86B8 /* KeychainUtils.swift */; };
 		EFFDB1A52400C49D00DB86B8 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1A42400C49D00DB86B8 /* OSLog.swift */; };
 		EFFDB1A72401329A00DB86B8 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1A62401329A00DB86B8 /* OSLog.swift */; };
+		EFFDB1A9240245E900DB86B8 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1A8240245E900DB86B8 /* MenuController.swift */; };
+		EFFDB1AC24024ABC00DB86B8 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFFDB1AA24024ABC00DB86B8 /* Preferences.storyboard */; };
+		EFFDB1AD24024ABC00DB86B8 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1AB24024ABC00DB86B8 /* PreferencesViewController.swift */; };
+		EFFDB1B124024D8400DB86B8 /* VPNServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1B024024D8400DB86B8 /* VPNServicesManager.swift */; };
+		EFFDB1B324024E2300DB86B8 /* VPNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1B224024E2300DB86B8 /* VPNService.swift */; };
+		EFFDB1B52402545C00DB86B8 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1B42402545C00DB86B8 /* VPN.swift */; };
+		EFFDB1B72402550100DB86B8 /* VPNConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1B62402550100DB86B8 /* VPNConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +75,6 @@
 /* Begin PBXFileReference section */
 		EFFDB13323FF692300DB86B8 /* GoVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFFDB13623FF692300DB86B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EFFDB13823FF692300DB86B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EFFDB13A23FF692400DB86B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFFDB13D23FF692400DB86B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EFFDB14023FF692400DB86B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +100,14 @@
 		EFFDB1A22400268100DB86B8 /* KeychainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtils.swift; sourceTree = "<group>"; };
 		EFFDB1A42400C49D00DB86B8 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 		EFFDB1A62401329A00DB86B8 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
+		EFFDB1A8240245E900DB86B8 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		EFFDB1AA24024ABC00DB86B8 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		EFFDB1AB24024ABC00DB86B8 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		EFFDB1AF24024D6B00DB86B8 /* GoVPN-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GoVPN-Bridging-Header.h"; sourceTree = "<group>"; };
+		EFFDB1B024024D8400DB86B8 /* VPNServicesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNServicesManager.swift; sourceTree = "<group>"; };
+		EFFDB1B224024E2300DB86B8 /* VPNService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNService.swift; sourceTree = "<group>"; };
+		EFFDB1B42402545C00DB86B8 /* VPN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
+		EFFDB1B62402550100DB86B8 /* VPNConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,14 +174,20 @@
 		EFFDB13523FF692300DB86B8 /* GoVPN */ = {
 			isa = PBXGroup;
 			children = (
+				EFFDB1AE24024CD500DB86B8 /* Models */,
 				EFFDB13623FF692300DB86B8 /* AppDelegate.swift */,
-				EFFDB13823FF692300DB86B8 /* ContentView.swift */,
+				EFFDB1A8240245E900DB86B8 /* MenuController.swift */,
 				EFFDB13A23FF692400DB86B8 /* Assets.xcassets */,
 				EFFDB13F23FF692400DB86B8 /* Main.storyboard */,
 				EFFDB14223FF692400DB86B8 /* Info.plist */,
 				EFFDB13C23FF692400DB86B8 /* Preview Content */,
 				EFFDB1A02400230F00DB86B8 /* SystemKeychain.swift */,
 				EFFDB1A42400C49D00DB86B8 /* OSLog.swift */,
+				EFFDB1AA24024ABC00DB86B8 /* Preferences.storyboard */,
+				EFFDB1AB24024ABC00DB86B8 /* PreferencesViewController.swift */,
+				EFFDB1B024024D8400DB86B8 /* VPNServicesManager.swift */,
+				EFFDB1B224024E2300DB86B8 /* VPNService.swift */,
+				EFFDB1AF24024D6B00DB86B8 /* GoVPN-Bridging-Header.h */,
 			);
 			path = GoVPN;
 			sourceTree = "<group>";
@@ -235,6 +254,15 @@
 				EFFDB19B2400209C00DB86B8 /* SystemKeychainAccessProtocol.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		EFFDB1AE24024CD500DB86B8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EFFDB1B42402545C00DB86B8 /* VPN.swift */,
+				EFFDB1B62402550100DB86B8 /* VPNConfiguration.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +394,7 @@
 				EFFDB19923FF8B4000DB86B8 /* Uninstall.sh in Resources */,
 				EFFDB14123FF692400DB86B8 /* Main.storyboard in Resources */,
 				EFFDB13E23FF692400DB86B8 /* Preview Assets.xcassets in Resources */,
+				EFFDB1AC24024ABC00DB86B8 /* Preferences.storyboard in Resources */,
 				EFFDB19723FF8B3700DB86B8 /* SMJobBlessUtil.py in Resources */,
 				EFFDB13B23FF692400DB86B8 /* Assets.xcassets in Resources */,
 			);
@@ -392,11 +421,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFFDB13923FF692300DB86B8 /* ContentView.swift in Sources */,
+				EFFDB1B52402545C00DB86B8 /* VPN.swift in Sources */,
+				EFFDB1B324024E2300DB86B8 /* VPNService.swift in Sources */,
 				EFFDB13723FF692300DB86B8 /* AppDelegate.swift in Sources */,
 				EFFDB1A12400230F00DB86B8 /* SystemKeychain.swift in Sources */,
 				EFFDB19C2400209C00DB86B8 /* SystemKeychainAccessProtocol.swift in Sources */,
+				EFFDB1B72402550100DB86B8 /* VPNConfiguration.swift in Sources */,
+				EFFDB1A9240245E900DB86B8 /* MenuController.swift in Sources */,
+				EFFDB1AD24024ABC00DB86B8 /* PreferencesViewController.swift in Sources */,
 				EFFDB1A52400C49D00DB86B8 /* OSLog.swift in Sources */,
+				EFFDB1B124024D8400DB86B8 /* VPNServicesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +614,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"GoVPN/Preview Content\"";
 				DEVELOPMENT_TEAM = K465DYH4Z2;
@@ -596,6 +630,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.GoVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoVPN/GoVPN-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -607,7 +642,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"GoVPN/Preview Content\"";
 				DEVELOPMENT_TEAM = K465DYH4Z2;
@@ -622,6 +657,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.colharris.GoVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoVPN/GoVPN-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -715,7 +751,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K465DYH4Z2;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -746,7 +782,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = K465DYH4Z2;
 				ENABLE_HARDENED_RUNTIME = NO;

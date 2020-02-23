@@ -25,17 +25,19 @@ class SystemKeychain: NSObject {
         self.systemKeychainConnection.invalidate()
     }
     
-    func updatePassword(identifier: String, password: String, withReply: (Bool)->Void) {
+    func updatePassword(identifier: String, password: String, withReply: @escaping (Bool)->Void) {
         os_log("Establishing connection to GoVPNHelper...", log: OSLog.app, type: .info)
         
         let connection = self.systemKeychainConnection.remoteObjectProxyWithErrorHandler { (error) in
             os_log("Remote proxy to GoVPNHelper failed. Error: %{public}@", log: OSLog.app, type: .error, error.localizedDescription)
+            withReply(false)
         } as! SystemKeychainAccessProtocol
         
         os_log("Established connection to GoVPNHelper", log: OSLog.app, type: .info)
         
         connection.updatePassword(identifier: identifier, password: password) { result in
             os_log("Password updated! Result: %{public}@", log: OSLog.app, type: .info, result)
+            withReply(result)
         }
         
         os_log("Request to update password sent...", log: OSLog.app, type: .info)

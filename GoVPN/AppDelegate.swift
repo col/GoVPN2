@@ -14,32 +14,39 @@ import os.log
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    var window: NSWindow!
+            
+    var menuController: MenuController!
     var authRef: AuthorizationRef?
-
+    var preferencesWindow: NSWindowController?
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
-
-        // Init the helper stuff...
-        initHelper()
-        
-        // Create the window and set the content view. 
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: contentView)
-        window.makeKeyAndOrderFront(nil)
+        VPNServicesManager.shared.loadConfigurationsWithHandler { error in
+            guard error == nil else {
+                os_log("Error loading vpn services. Error: %{public}@", log: OSLog.app, type: .error, error!.localizedDescription)
+                fatalError("Failed to load VPN services.")
+            }
+            self.menuController = MenuController()
+        }
+//        initHelper()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
+    @objc func showPreferences(_ sender: Any?) {
+        if preferencesWindow == nil {
+            preferencesWindow = NSStoryboard.init(name: NSStoryboard.Name("Preferences"), bundle: nil).instantiateInitialController()
+        }
+        
+        if let windowController = preferencesWindow {
+            windowController.showWindow(sender)
+            // Ensure the window becomes active and appears in front
+            NSApp.activate(ignoringOtherApps: true)
+            windowController.window?.makeKeyAndOrderFront(self)
+        }
+    }
+    
     func initHelper() {
         os_log("init helper...", log: OSLog.app, type: .info)
         let authFlags: AuthorizationFlags = []

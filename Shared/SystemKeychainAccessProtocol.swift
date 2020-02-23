@@ -10,5 +10,5 @@ import Foundation
 
 @objc(SystemKeychainAccessProtocol)
 protocol SystemKeychainAccessProtocol {
-    func updatePassword(identifier: String, password: String, withReply: (Bool)->Void)
+    func updatePassword(identifier: String, password: String, withReply: @escaping (Bool)->Void)
 }
