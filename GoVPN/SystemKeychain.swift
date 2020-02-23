@@ -12,6 +12,8 @@ import os.log
 
 class SystemKeychain: NSObject {
     
+    static let shared = SystemKeychain()
+    
     // An XPC service
     lazy var systemKeychainConnection: NSXPCConnection = {
         let options: NSXPCConnection.Options = [NSXPCConnection.Options.privileged]
@@ -36,7 +38,7 @@ class SystemKeychain: NSObject {
         os_log("Established connection to GoVPNHelper", log: OSLog.app, type: .info)
         
         connection.updatePassword(identifier: identifier, password: password) { result in
-            os_log("Password updated! Result: %{public}@", log: OSLog.app, type: .info, result)
+            os_log("Password updated!", log: OSLog.app, type: .info)
             withReply(result)
         }
         

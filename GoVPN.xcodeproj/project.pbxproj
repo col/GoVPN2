@@ -33,6 +33,7 @@
 		EFFDB1B324024E2300DB86B8 /* VPNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1B224024E2300DB86B8 /* VPNService.swift */; };
 		EFFDB1B52402545C00DB86B8 /* VPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1B42402545C00DB86B8 /* VPN.swift */; };
 		EFFDB1B72402550100DB86B8 /* VPNConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1B62402550100DB86B8 /* VPNConfiguration.swift */; };
+		EFFDB1B9240276A400DB86B8 /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFDB1B8240276A400DB86B8 /* Shell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		EFFDB1B224024E2300DB86B8 /* VPNService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNService.swift; sourceTree = "<group>"; };
 		EFFDB1B42402545C00DB86B8 /* VPN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPN.swift; sourceTree = "<group>"; };
 		EFFDB1B62402550100DB86B8 /* VPNConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNConfiguration.swift; sourceTree = "<group>"; };
+		EFFDB1B8240276A400DB86B8 /* Shell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				EFFDB1AB24024ABC00DB86B8 /* PreferencesViewController.swift */,
 				EFFDB1B024024D8400DB86B8 /* VPNServicesManager.swift */,
 				EFFDB1B224024E2300DB86B8 /* VPNService.swift */,
+				EFFDB1B8240276A400DB86B8 /* Shell.swift */,
 				EFFDB1AF24024D6B00DB86B8 /* GoVPN-Bridging-Header.h */,
 			);
 			path = GoVPN;
@@ -428,6 +431,7 @@
 				EFFDB19C2400209C00DB86B8 /* SystemKeychainAccessProtocol.swift in Sources */,
 				EFFDB1B72402550100DB86B8 /* VPNConfiguration.swift in Sources */,
 				EFFDB1A9240245E900DB86B8 /* MenuController.swift in Sources */,
+				EFFDB1B9240276A400DB86B8 /* Shell.swift in Sources */,
 				EFFDB1AD24024ABC00DB86B8 /* PreferencesViewController.swift in Sources */,
 				EFFDB1A52400C49D00DB86B8 /* OSLog.swift in Sources */,
 				EFFDB1B124024D8400DB86B8 /* VPNServicesManager.swift in Sources */,

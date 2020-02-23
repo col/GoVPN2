@@ -83,13 +83,19 @@ class MenuController: NSObject {
     @objc func selectVPN(_ sender: Any?) {
         if let menuItem = sender as? NSMenuItem {
             if let vpn = menuItem.representedObject as? VPN {
-                if let vpnService = VPNServicesManager.shared.service(named: vpn.name),
-                    vpnService.state() == .connected || vpnService.state() == .connecting
-                {
-                    vpnService.disconnect()
-                } else {
-                    os_log("Connect to vpn - Not yet implemented", log: OSLog.app, type: .info)
-//                    connectToVPN(vpnName: vpn.name)
+                if let vpnService = VPNServicesManager.shared.service(named: vpn.name) {
+                    if vpnService.state() == .connected || vpnService.state() == .connecting {
+                        vpnService.disconnect()
+                    } else {
+                        os_log("Loading OTP for %{public}@...", log: OSLog.app, type: .info, vpn.name)
+                        let otp = Shell.execute(launchPath: "/usr/local/bin/mimier", arguments: ["get", "gojek"])
+                        os_log("OTP = %{public}@", log: OSLog.app, type: .info, otp)
+                        SystemKeychain.shared.updatePassword(identifier: vpn.name, password: otp) { result in
+                            os_log("Connecting to VPN with new password... ", log: OSLog.app, type: .info)
+                            vpnService.connect()
+                            os_log("Connected.", log: OSLog.app, type: .info)
+                        }
+                    }
                 }
             }
         }
@@ -115,6 +121,17 @@ extension MenuController: NSMenuDelegate {
     
     func menuWillOpen(_ menu: NSMenu) {
         print("menuWillOpen")
+        for menuItem in statusItem.menu?.items ?? [] {
+            if let vpn = menuItem.representedObject as? VPN {
+                if let vpnService = VPNServicesManager.shared.service(named: vpn.name),
+                    vpnService.state() == .connected || vpnService.state() == .connecting
+                {
+                    menuItem.state = .on
+                } else {
+                    menuItem.state = .off
+                }
+            }
+        }
     }
         
 }
