@@ -16,8 +16,7 @@ import os.log
 class AppDelegate: NSObject, NSApplicationDelegate {
             
     var menuController: MenuController!
-    var authRef: AuthorizationRef?
-    var preferencesWindow: NSWindowController?
+    var authRef: AuthorizationRef?    
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         VPNServicesManager.shared.loadConfigurationsWithHandler { error in
@@ -32,20 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
-    }
-
-    @objc func showPreferences(_ sender: Any?) {
-        if preferencesWindow == nil {
-            preferencesWindow = NSStoryboard.init(name: NSStoryboard.Name("Preferences"), bundle: nil).instantiateInitialController()
-        }
-        
-        if let windowController = preferencesWindow {
-            windowController.showWindow(sender)
-            // Ensure the window becomes active and appears in front
-            NSApp.activate(ignoringOtherApps: true)
-            windowController.window?.makeKeyAndOrderFront(self)
-        }
-    }
+    }    
     
     func initHelper() {
         os_log("init helper...", log: OSLog.app, type: .info)
