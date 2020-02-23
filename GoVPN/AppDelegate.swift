@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             self.menuController = MenuController()
         }
-//        initHelper()
+        initHelper()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -38,13 +38,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let authFlags: AuthorizationFlags = []
         let status = AuthorizationCreate(nil, nil, authFlags, &authRef)
         if status != errAuthorizationSuccess {
-            os_log("Failed to create authRef for GoVPNHelper", log: OSLog.app, type: .info)
-            exit(1)
+            os_log("Failed to create authRef for GoVPNHelper", log: OSLog.app, type: .info)            
         }
 
         if let error = getHelper() {
             os_log("Failed to install GoVPNHelper. Error: %{public}@", log: OSLog.app, type: .error, error.localizedDescription)
-            exit(1)
         } else {
             os_log("GoVPNHelper installed and ready.", log: OSLog.app, type: .info)
         }
