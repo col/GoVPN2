@@ -1,6 +1,6 @@
 //
 //  KeychainUtils.swift
-//  com.colharris.GoVPNHelper
+//  com.colharris.GoVPN
 //
 //  Created by Colin Harris on 21/2/20.
 //  Copyright © 2020 Colin Harris. All rights reserved.

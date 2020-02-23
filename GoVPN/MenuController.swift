@@ -8,6 +8,7 @@
 
 import Cocoa
 import os.log
+import SwiftOTP
 
 class MenuController: NSObject {
     
@@ -45,7 +46,7 @@ class MenuController: NSObject {
                     menu.addItem(NSMenuItem(title: name, action: nil, keyEquivalent: ""))
                 }
                 
-                for vpn in groupVpns {
+                for vpn in groupVpns.sorted(by: { $0.name < $1.name }) {
                     count += 1
                     menu.addItem(menuItem(for: vpn, number: count, indent: indent))
                 }
@@ -81,23 +82,8 @@ class MenuController: NSObject {
     }
     
     @objc func selectVPN(_ sender: Any?) {
-        if let menuItem = sender as? NSMenuItem {
-            if let vpn = menuItem.representedObject as? VPN {
-                if let vpnService = VPNServicesManager.shared.service(named: vpn.name) {
-                    if vpnService.state() == .connected || vpnService.state() == .connecting {
-                        vpnService.disconnect()
-                    } else {
-                        os_log("Loading OTP for %{public}@...", log: OSLog.app, type: .info, vpn.name)
-                        let otp = Shell.execute(launchPath: "/usr/local/bin/mimier", arguments: ["get", "gojek"])
-                        os_log("OTP = %{public}@", log: OSLog.app, type: .info, otp)
-                        SystemKeychain.shared.updatePassword(identifier: vpn.name, password: otp) { result in
-                            os_log("Connecting to VPN with new password... ", log: OSLog.app, type: .info)
-                            vpnService.connect()
-                            os_log("Connected.", log: OSLog.app, type: .info)
-                        }
-                    }
-                }
-            }
+        if let menuItem = sender as? NSMenuItem, let vpn = menuItem.representedObject as? VPN {
+            vpn.toggleStatus()
         }
     }
     
