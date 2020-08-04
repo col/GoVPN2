@@ -33,7 +33,8 @@ class VPN: NSObject, Codable {
                     return
                 }
                                 
-                SystemKeychain.shared.updatePassword(identifier: name, password: otp) { result in
+                let service = "\(vpnService.uuidString()).XAUTH"
+                SystemKeychain.shared.updatePassword(identifier: name, service: service, password: otp) { result in
                     os_log("Connecting to VPN with new password... ", log: OSLog.app, type: .info)
                     vpnService.connect()
                     os_log("Connected.", log: OSLog.app, type: .info)

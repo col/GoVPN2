@@ -11,14 +11,24 @@ import os.log
 
 class SystemKeychainAccess : NSObject, SystemKeychainAccessProtocol {
     
-    func updatePassword(identifier: String, password: String, withReply: (Bool)->Void) {
-        os_log("SystemKeychainAccess.updatePassword...", log: OSLog.helper, type: .info)
+    func updatePassword(identifier: String, service: String, password: String, withReply: (Bool)->Void) {
+        
         do {
-            try KeychainUtils.updatePassword(label: identifier, password: password)
-            os_log("SystemKeychainAccess.updatePassword. Success!", log: OSLog.helper, type: .info)
+
+            os_log("SystemKeychainAccess.itemExists with label %{public}@ and service %{public}@", log: OSLog.helper, type: .info, identifier, service)
+            if KeychainUtils.itemExists(withLabel: identifier, andService: service) {
+                os_log("SystemKeychainAccess.updatePassword...", log: OSLog.helper, type: .info)
+                try KeychainUtils.updatePassword(label: identifier, service: service, password: password)
+            } else {
+                os_log("SystemKeychainAccess.createPassword...", log: OSLog.helper, type: .info)
+                let item = try KeychainUtils.addPassword(label: identifier, service: service, password: password)
+                os_log("SystemKeychainAccess.created: %{public}@", log: OSLog.helper, type: .info, item!)
+            }
+            
+            os_log("SystemKeychainAccess. Success!", log: OSLog.helper, type: .info)
             withReply(true)
         } catch {
-            os_log("SystemKeychainAccess.updatePassword. Error: %{public}@", log: OSLog.helper, type: .info, error.localizedDescription)
+            os_log("SystemKeychainAccess. Error: %{public}@", log: OSLog.helper, type: .info, error.localizedDescription)
             withReply(false)
         }
     }

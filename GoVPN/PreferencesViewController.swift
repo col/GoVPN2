@@ -30,6 +30,7 @@ class PreferencesViewController: NSViewController {
     
     @IBAction func save(_ sender: Any) {
         VPNConfiguration.shared.saveVpns(vpns: availableVPNsAC!.arrangedObjects as! [VPN])
+        MenuController.shared.refreshMenu()
         self.view.window?.windowController?.close()
     }
     

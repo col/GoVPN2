@@ -45,12 +45,8 @@ class VPNService {
         return configuration.name
     }
     
-    func enabled() -> Bool {
-        return false
-    }
-    
-    func group() -> String {
-        return ""
+    func uuidString() -> String {
+        return UUID(uuid: configuration.identifier!.uuid).uuidString
     }
     
     func serverAddress() -> String {

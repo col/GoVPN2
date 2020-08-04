@@ -12,22 +12,28 @@ import SwiftOTP
 
 class MenuController: NSObject {
     
+    static let shared = MenuController()
+    
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     var preferencesWindow: NSWindowController?
     
-    override init() {
+    private override init() {
         super.init()
         setStatusItemImage()
-        statusItem.menu = constructMenu()
+        refreshMenu()
     }
     
-    func setStatusItemImage() {
+    private func setStatusItemImage() {
         if let button = statusItem.button {
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
         }
     }
     
-    func constructMenu() -> NSMenu {
+    func refreshMenu() {
+        statusItem.menu = constructMenu()
+    }
+        
+    private func constructMenu() -> NSMenu {
         let vpns = VPNConfiguration.shared.vpns().filter { $0.enabled }
         
         let menu = NSMenu()
@@ -65,7 +71,7 @@ class MenuController: NSObject {
         return menu
     }
  
-    func menuItem(title: String, action: Selector?, keyEquivalent: String) -> NSMenuItem {
+    private func menuItem(title: String, action: Selector?, keyEquivalent: String) -> NSMenuItem {
         let item = NSMenuItem()
         item.title = title
         item.target = self
@@ -74,7 +80,7 @@ class MenuController: NSObject {
         return item
     }
 
-    func menuItem(for vpn: VPN, number: Int, indent: Int = 0) -> NSMenuItem {
+    private func menuItem(for vpn: VPN, number: Int, indent: Int = 0) -> NSMenuItem {
         let item = menuItem(title: vpn.name, action: #selector(selectVPN(_:)), keyEquivalent: "\(number)")
         item.indentationLevel = indent
         item.representedObject = vpn
@@ -107,6 +113,10 @@ extension MenuController: NSMenuDelegate {
     
     func menuWillOpen(_ menu: NSMenu) {
         print("menuWillOpen")
+        updateStatuses()
+    }
+      
+    private func updateStatuses() {
         for menuItem in statusItem.menu?.items ?? [] {
             if let vpn = menuItem.representedObject as? VPN {
                 if let vpnService = VPNServicesManager.shared.service(named: vpn.name),
@@ -119,5 +129,4 @@ extension MenuController: NSMenuDelegate {
             }
         }
     }
-        
 }

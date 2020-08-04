@@ -26,18 +26,9 @@ class ServiceDelegate : NSObject, NSXPCListenerDelegate {
 
 // Create the listener and resume it:
 let delegate = ServiceDelegate()
-//let listener = NSXPCListener.service()
 let listener = NSXPCListener.init(machServiceName: "com.colharris.GoVPNHelper")
 listener.delegate = delegate;
 listener.resume()
 os_log("GoVPNHelper started", log: OSLog.helper, type: .info)
 
 RunLoop.current.run()
-
-//do {
-//    try KeychainUtils.updatePassword(label: "id-aegis-integration", password: "running-xcode")
-//    print("success!")
-//} catch {
-//    print("Error!")
-//}
-

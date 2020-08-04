@@ -15,7 +15,6 @@ import os.log
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
             
-    var menuController: MenuController!
     var authRef: AuthorizationRef?    
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -24,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 os_log("Error loading vpn services. Error: %{public}@", log: OSLog.app, type: .error, error!.localizedDescription)
                 fatalError("Failed to load VPN services.")
             }
-            self.menuController = MenuController()
+            MenuController.shared.refreshMenu()
         }
         initHelper()
     }
